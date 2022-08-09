@@ -44,6 +44,12 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
       
       -
         name: Login to DockerHub
@@ -51,11 +57,5 @@ jobs:
         with:
           username: keshavstatusneo
           password: Keshav@123
-      -
-        name: Build and push
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          push: true
-          tags: user/app:latest
+     
     
