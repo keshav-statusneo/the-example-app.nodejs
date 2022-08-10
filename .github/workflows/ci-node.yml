@@ -78,8 +78,6 @@ jobs:
         with:
           username: keshavstatusneo
           password: Keshav@123
-      - name: build image
-        run: |
-          docker build .
+      
      
     
